@@ -11,6 +11,16 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public CameraController cameraController;
     public Transform cameraBody;
+    public Camera playerCamera;
+
+    [Header("Interaction values")]
+    [SerializeField] private Vector3 interactionRayPoint = default;
+    [SerializeField] private float interactionDistance = default;
+    [SerializeField] private LayerMask interactionLayer = default;
+    private Interactable currentInteractable;
+
+    [HideInInspector]
+    public bool inDialogue;
 
     // Components
     private CharacterController controller; 
@@ -25,15 +35,30 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
     }
-
+    
     // Input System callback
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer) && !inDialogue)
+            {
+                currentInteractable.OnInteract();
+            }
+            else if (inDialogue)
+            {
+
+            }
+        }
+    }
     void Update()
     {
         HandleGravityMovement();
+        InteractionCheck();
     }
     // Normal walking with gravity
     void HandleGravityMovement()
@@ -46,5 +71,25 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+    private void InteractionCheck()
+    {
+        if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
+        {
+            if (hit.collider.gameObject.layer == 7 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
+            {
+                hit.collider.TryGetComponent(out currentInteractable);
+
+                if (currentInteractable)
+                {
+                    currentInteractable.OnFocus();
+                }
+            }
+        }
+        else if (currentInteractable)
+        {
+            currentInteractable.OnLoseFocus();
+            currentInteractable = null;
+        }
     }
 }
