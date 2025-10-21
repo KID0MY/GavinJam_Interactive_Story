@@ -40,7 +40,8 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        HandleLookGravity();
+        if (Cursor.lockState == CursorLockMode.Locked)
+            HandleLookGravity();
     }
 
     void HandleLookGravity()

@@ -45,13 +45,9 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            if (currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer) && !inDialogue)
+            if (currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
             {
                 currentInteractable.OnInteract();
-            }
-            else if (inDialogue)
-            {
-
             }
         }
     }
@@ -76,10 +72,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
         {
-            if (hit.collider.gameObject.layer == 7 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
+            if (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID())
             {
                 hit.collider.TryGetComponent(out currentInteractable);
-
+                Debug.Log("raycast works");
                 if (currentInteractable)
                 {
                     currentInteractable.OnFocus();
