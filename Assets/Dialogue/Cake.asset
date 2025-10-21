@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
+  m_Name: Cake
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
+  DiaNode:
+    dialogueLines:
+    - Cake
+    - weee
+    - cake
+    responses:
+    - responseText: ...
+      nextNode:
+        dialogueLines:
+        - wouldn't hurt
+        responses:
+        - responseText: ...
+          nextNode:
+            dialogueLines:
+            - waaaaaaaaa
+            responses:
+            - responseText: (Eat Cake Later)
+              nextNode:
+                dialogueLines:
+                - Waa
+                - Wee
+                responses: []
+            - responseText: (Put Cake Back)
+              nextNode:
+                dialogueLines: []
+                responses: []

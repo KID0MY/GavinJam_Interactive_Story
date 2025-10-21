@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Dialogue : MonoBehaviour
 {
@@ -13,17 +14,18 @@ public class Dialogue : MonoBehaviour
     public GameObject responseButtonPrefab;
     public Transform responseButtonContainer;
 
+    public float TextSpeed;
+
+    private int index;
+    private bool inDialogue;
+
     private void Awake()
     {
-        // ensures only one dialogue object exists at any one time
         if (Instance == null)
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        DialogBodyText.text = string.Empty;
         HideDialogue();
     }
     // set up Title and body text, instantiates buttons with response titles and listeners.
@@ -32,19 +34,45 @@ public class Dialogue : MonoBehaviour
         ShowDialogue();
 
         DialogTitleText.text = title;
-        DialogBodyText.text = node.dialogueText;
+        DialogBodyText.text = node.dialogueLines[index];
+        StartCoroutine(TypeLine(node));
 
         foreach (Transform child in responseButtonContainer)
         {
             Destroy(child.gameObject);
         }
 
-        foreach (ResponseNode response in node.responses)
+        if (index >= node.dialogueLines.Length - 1)
+        {
+            foreach (ResponseNode response in node.responses)
+            {
+                GameObject buttonObj = Instantiate(responseButtonPrefab, responseButtonContainer);
+                buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = response.responseText;
+
+                buttonObj.GetComponent<Button>().onClick.AddListener(() => SelectResponse(response, title));
+            }
+        }
+        else
         {
             GameObject buttonObj = Instantiate(responseButtonPrefab, responseButtonContainer);
-            buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = response.responseText;
+            buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = "Next";
 
-            buttonObj.GetComponent<Button>().onClick.AddListener(() => SelectResponse(response, title));
+            buttonObj.GetComponent<Button>().onClick.AddListener(() => NextLine(title, node));
+        }
+    }
+
+    void NextLine(string title, DialogueNode node)
+    {
+        if (index < node.dialogueLines.Length)
+        {
+            index++;
+            StartDialogue(title, node);
+            Debug.Log(index);
+        }
+        else if (node.responses.Count == 0 && index >= node.dialogueLines.Length - 1)
+        {
+            index = 0;
+            HideDialogue();
         }
     }
 
@@ -53,11 +81,14 @@ public class Dialogue : MonoBehaviour
     {
         if (!response.nextNode.IsLastNode())
         {
+            index = 0;
             StartDialogue(title, response.nextNode);
         }
         else
         {
             HideDialogue();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
@@ -77,96 +108,13 @@ public class Dialogue : MonoBehaviour
         return DialogueParent.activeSelf;
     }
 
-    //public TextMeshProUGUI text;
-    //public PlayerController player;
-    //public Button[] responseButtons;
-    //private string[] lines;
-    //private float textSpeed;
-
-    //private int index;
-    //private bool dialogueStarted = false;
-
-    //// Start is called once before the first execution of Update after the MonoBehaviour is created
-    //void Start()
-    //{
-    //    text.text = string.Empty;
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-
-    //public void StartDialogue(string[] script, float speed, string[] Titles)
-    //{
-    //    if (dialogueStarted == false)
-    //    {
-    //        text.gameObject.SetActive(true);
-    //        lines = script;
-    //        textSpeed = speed;
-    //        player.inDialogue = true;
-    //        index = 0;
-    //        dialogueStarted = true;
-    //        StartCoroutine(TypeLine());
-    //    }
-    //    else 
-    //    {
-    //        if (text.text == lines[index])
-    //        {
-    //            NextLine();
-    //        }
-    //    }
-    //}
-
-    //public void NextLine()
-    //{
-    //    if (index < lines.Length - 1)
-    //    {
-    //        if (text.text == lines[index])
-    //        {
-    //            index++;
-    //            text.text = string.Empty;
-    //            StartCoroutine(TypeLine());
-    //        }
-    //        else
-    //        {
-    //            StopAllCoroutines();
-    //            text.text = lines[index];
-    //        }
-    //    }
-    //    //else
-    //    //{
-    //    //    if (text.text == lines[index])
-    //    //    {
-    //    //        StopAllCoroutines();
-    //    //        Debug.Log("finished text");
-    //    //        text.text = "";
-    //    //        index = 0;
-    //    //        dialogueStarted = false;
-    //    //        player.inDialogue = false;
-    //    //    }
-    //    //    else
-    //    //    {
-    //    //        StopAllCoroutines();
-    //    //        text.text = lines[index];
-    //    //    }
-    //    //}
-    //}
-
-    //public void Response(string[] script)
-    //{
-    //    index = 0;
-    //    lines = script;
-    //    NextLine();
-    //}
-
-    //IEnumerator TypeLine()
-    //{
-    //    foreach(char c in lines[index].ToCharArray())
-    //    {
-    //        text.text += c;
-    //        yield return new WaitForSeconds(textSpeed);
-    //    }
-    //}
+    IEnumerator TypeLine(DialogueNode node)
+    {
+        DialogBodyText.maxVisibleCharacters = 0;
+        foreach (char c in node.dialogueLines[index].ToCharArray())
+        {
+            DialogBodyText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(TextSpeed);
+        }
+    }
 }
