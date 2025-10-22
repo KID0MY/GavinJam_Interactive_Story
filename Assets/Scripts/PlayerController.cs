@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public int karma = 0;
-    public List<Interactable> Endings;
+    public List<DialogueObject> Endings;
     public int itemsInteracted = 0;
     public Transform endPos;
-    bool gameEnd;
+    public bool gameEnd;
 
     [Header("Character movement Values")]
     public float moveSpeed = 10f;
@@ -66,8 +66,9 @@ public class PlayerController : MonoBehaviour
     {
         HandleGravityMovement();
         InteractionCheck();
-        if (itemsInteracted == 5 && !gameEnd)
+        if (!inDialogue && !gameEnd && itemsInteracted >= 5)
         {
+            gameEnd = true;
             endGame();
         }
     }
@@ -90,7 +91,6 @@ public class PlayerController : MonoBehaviour
             if (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID())
             {
                 hit.collider.TryGetComponent(out currentInteractable);
-                Debug.Log("raycast works");
                 if (currentInteractable)
                 {
                     currentInteractable.OnFocus();
@@ -103,19 +103,19 @@ public class PlayerController : MonoBehaviour
             currentInteractable = null;
         }
     }
-    void endGame()
+    public void endGame()
     {
-        if (karma < 0 && trueActs < 4)
-        {
-            Endings[2].OnInteract();
-        }
-        else if (karma >= 0 && trueActs < 4)
-        {
-            Endings[3].OnInteract();
-        }
-        else if (trueActs >= 4)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+            if (karma < 0 && trueActs < 4)
+            {
+                Endings[0].SpeakTo();
+            }
+            else if (karma >= 0 && trueActs < 4)
+            {
+                Endings[1].SpeakTo();
+            }
+            else if (trueActs >= 4)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
     }
 }

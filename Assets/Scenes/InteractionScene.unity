@@ -302,8 +302,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Friendly Guy
   startDialogue: 0
+  Item: 0
   diaScriptable: {fileID: 11400000, guid: d4a7e277c783e10449f56e262548ee02, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 0}
 --- !u!136 &77489570
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -352,7 +354,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -463,7 +465,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -676,7 +678,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1321,8 +1323,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Rude Girl
   startDialogue: 0
+  Item: 0
   diaScriptable: {fileID: 11400000, guid: 932f2e3d09b4026449799deb1d0fd031, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 0}
 --- !u!136 &377302306
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1371,7 +1375,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1854,7 +1858,7 @@ PrefabInstance:
     - target: {fileID: 8128471703539861827, guid: 8e17432ccf7de984d97376c1d000320b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 74bb3b7503226a449ade0431d7040789, type: 2}
+      objectReference: {fileID: 2100000, guid: a714b20bc0a2fcc42a982d1c650e080a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1885,8 +1889,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Cake
   startDialogue: 0
+  Item: 1
   diaScriptable: {fileID: 11400000, guid: 5e5f5bdaf21815543817442cf9ff98e7, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 1162993585}
 --- !u!65 &433480430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2118,7 +2124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2420,7 +2426,7 @@ PrefabInstance:
     - target: {fileID: 1693575720178817976, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+      objectReference: {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
     - target: {fileID: 1716428687667845906, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
       propertyPath: m_DefaultActionMap
       value: 
@@ -2460,7 +2466,15 @@ PrefabInstance:
     - target: {fileID: 3162649927319037818, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+      objectReference: {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
+    - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+      propertyPath: karma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+      propertyPath: endPos
+      value: 
+      objectReference: {fileID: 1005942479}
     - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
       propertyPath: moveSpeed
       value: 10
@@ -2470,9 +2484,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 768110833}
     - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+      propertyPath: itemsInteracted
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+      propertyPath: Endings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
       propertyPath: interactionDistance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+      propertyPath: 'Endings.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1235215996}
+    - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+      propertyPath: 'Endings.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1471314706}
     - target: {fileID: 6181789606384057560, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
       propertyPath: interactionRayPoint.x
       value: 0.5
@@ -2536,7 +2566,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2044793833910237383, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 818371755}
   m_SourcePrefab: {fileID: 100100000, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
 --- !u!1 &508230971
 GameObject:
@@ -2621,7 +2654,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2961,7 +2994,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3771,6 +3804,7 @@ GameObject:
   - component: {fileID: 718130260}
   - component: {fileID: 718130259}
   - component: {fileID: 718130258}
+  - component: {fileID: 718130261}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: Untagged
@@ -3857,6 +3891,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718130256}
   m_CullTransparentMesh: 1
+--- !u!82 &718130261
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718130256}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: feb9ccc299805b7468b688a890c2e601, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &739711863
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3959,7 +4090,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4063,8 +4194,112 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: You
   startDialogue: 1
+  Item: 0
   diaScriptable: {fileID: 11400000, guid: d652214fe1182b64892d619390e34e61, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 0}
+--- !u!1 &818371751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2044793833910237383, guid: 5dc863c19070d43438c47a26d05b8fea, type: 3}
+  m_PrefabInstance: {fileID: 501802614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &818371755
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818371751}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 1515b18a626c4dc4bbe800117c2e5314, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.632
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4544,7 +4779,7 @@ PrefabInstance:
     - target: {fileID: 9060915934675010065, guid: 7d4a7955c564a7746839b44db6be73c2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 74bb3b7503226a449ade0431d7040789, type: 2}
+      objectReference: {fileID: 2100000, guid: a714b20bc0a2fcc42a982d1c650e080a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4575,8 +4810,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Ring
   startDialogue: 0
+  Item: 1
   diaScriptable: {fileID: 11400000, guid: 814d7532f2f977447ba6a0b4700a14c0, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 1162993585}
 --- !u!135 &899965352
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4793,12 +5030,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005942478}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.817, y: 1.021, z: 0.164}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 37.500652, y: 1.021, z: 1.31424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1058017366}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1019740425
 GameObject:
@@ -5091,7 +5328,6 @@ Transform:
   - {fileID: 860789012}
   - {fileID: 1688432148}
   - {fileID: 1289925995}
-  - {fileID: 1005942479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059795768
@@ -5901,7 +6137,7 @@ PrefabInstance:
     - target: {fileID: 6466552195583886552, guid: 6216c392fea5f824d97b4f8cf61d6125, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 74bb3b7503226a449ade0431d7040789, type: 2}
+      objectReference: {fileID: 2100000, guid: a714b20bc0a2fcc42a982d1c650e080a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5932,8 +6168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Pills
   startDialogue: 0
+  Item: 1
   diaScriptable: {fileID: 11400000, guid: 0ffa8473e9b4877448d942f77bc74ff6, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 1162993585}
 --- !u!136 &1181478544
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6084,6 +6322,56 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1235215995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235215997}
+  - component: {fileID: 1235215996}
+  m_Layer: 0
+  m_Name: Bad End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1235215996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235215995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a03c621d2dfe1439bb6e7e7740d078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  Name: 
+  startDialogue: 0
+  Item: 0
+  diaScriptable: {fileID: 11400000, guid: 1c5c00863f13c6146bd9a713312df5db, type: 2}
+  dialogueBox: {fileID: 718130258}
+  player: {fileID: 1162993585}
+--- !u!4 &1235215997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235215995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.75056, y: 2.239, z: -19.4389}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235471637
 GameObject:
   m_ObjectHideFlags: 0
@@ -6446,6 +6734,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1208525981278653253, guid: c7007bfd55cd1df408bd7c92771d9167, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a714b20bc0a2fcc42a982d1c650e080a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6497,8 +6789,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Guitar
   startDialogue: 0
+  Item: 1
   diaScriptable: {fileID: 11400000, guid: 349fe4680dbe27343b39974432c64ca4, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 1162993585}
 --- !u!1 &1289925994
 GameObject:
   m_ObjectHideFlags: 0
@@ -6821,7 +7115,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7045,6 +7339,37 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1428849362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428849363}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1428849363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428849362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.16128, y: 0, z: -37.81057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1429143912
 GameObject:
   m_ObjectHideFlags: 0
@@ -7448,6 +7773,56 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3219287259202649271, guid: fc5a1aa4f27c620418769faa89206b63, type: 3}
+--- !u!1 &1471314705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1471314707}
+  - component: {fileID: 1471314706}
+  m_Layer: 0
+  m_Name: Good End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1471314706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471314705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a03c621d2dfe1439bb6e7e7740d078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  Name: 
+  startDialogue: 0
+  Item: 0
+  diaScriptable: {fileID: 11400000, guid: 29aa61f3e4977f443b0912f7a93e603b, type: 2}
+  dialogueBox: {fileID: 718130258}
+  player: {fileID: 1162993585}
+--- !u!4 &1471314707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471314705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.75056, y: 2.239, z: -19.4389}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1480447714
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7829,7 +8204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8427,8 +8802,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Quiet Guy
   startDialogue: 0
+  Item: 0
   diaScriptable: {fileID: 11400000, guid: 59fc3d160cbaba849a93d125f8c198d2, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 0}
 --- !u!136 &1620840654
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8477,7 +8854,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8969,7 +9346,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9255,8 +9632,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Cake
   startDialogue: 0
+  Item: 0
   diaScriptable: {fileID: 11400000, guid: 5e5f5bdaf21815543817442cf9ff98e7, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 0}
 --- !u!1 &1688615016
 GameObject:
   m_ObjectHideFlags: 0
@@ -9635,7 +10014,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11301,8 +11680,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   Name: Photo
   startDialogue: 0
+  Item: 1
   diaScriptable: {fileID: 11400000, guid: 2f94bcdd87147244e9d3f1534e2b305a, type: 2}
   dialogueBox: {fileID: 718130258}
+  player: {fileID: 1162993585}
 --- !u!64 &1937637421
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11350,7 +11731,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 74bb3b7503226a449ade0431d7040789, type: 2}
+  - {fileID: 2100000, guid: a714b20bc0a2fcc42a982d1c650e080a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11980,7 +12361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68436b6c35ab18448a4bdbd4d67feb36, type: 2}
+  - {fileID: 2100000, guid: 876bdbf405ec1484fad2ae68c27d03ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12319,7 +12700,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12430,7 +12811,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9dc652349f15a440ba58df3a7aaae8c, type: 2}
+  - {fileID: 2100000, guid: 874245c6fce06bd49b92806196b23905, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12736,3 +13117,7 @@ SceneRoots:
   - {fileID: 899965349}
   - {fileID: 1937637424}
   - {fileID: 1058017366}
+  - {fileID: 1005942479}
+  - {fileID: 1235215997}
+  - {fileID: 1471314707}
+  - {fileID: 1428849363}

@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour
     public GameObject responseButtonPrefab;
     public Transform responseButtonContainer;
     public PlayerController player;
+    private AudioSource audio;
 
     public float TextSpeed;
 
@@ -22,6 +23,7 @@ public class Dialogue : MonoBehaviour
 
     private void Awake()
     {
+        audio = GetComponent<AudioSource>();
         if (Instance == null)
         {
             Instance = this;
@@ -32,8 +34,10 @@ public class Dialogue : MonoBehaviour
     // set up Title and body text, instantiates buttons with response titles and listeners.
     public void StartDialogue(string title, DialogueNode node)
     {
+        player.inDialogue = true;
         ShowDialogue();
 
+        audio.Play();
         DialogTitleText.text = node.dialogueLines[index].name;
         DialogBodyText.text = node.dialogueLines[index].Line;
         StartCoroutine(TypeLine(node));
@@ -87,11 +91,16 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            HideDialogue();
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            Debug.Log(player.gameEnd);
+            if (player.gameEnd == false)
+            {
+                HideDialogue();
+                player.inDialogue = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
         }
-        if (response.eatCake || response.eatPill || response.photo)
+        if (response.eatCake || response.eatPill || response.photo || response.ring)
         {
             player.trueActs++;
         }

@@ -26,7 +26,8 @@ MonoBehaviour:
       eatCake: 0
       eatPill: 0
       photo: 0
-      karma: 0
+      ring: 0
+      karma: 1
     - responseText: (Leave it)
       nextNode:
         dialogueLines: []
@@ -34,4 +35,5 @@ MonoBehaviour:
       eatCake: 0
       eatPill: 0
       photo: 0
-      karma: 0
+      ring: 0
+      karma: -1

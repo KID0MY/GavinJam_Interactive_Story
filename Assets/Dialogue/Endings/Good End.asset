@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
+  m_Name: Good End
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
+  DiaNode:
+    dialogueLines:
+    - name: You
+      Line: Well it's nearly time to go home. I guess I should just leave.
+    - name: Police
+      Line: Sir, you are under arrest for being under the influence and harassing
+        people at this workspace.
+    - name: You
+      Line: "Officer I have not done anything and I don\u2019t have anything on me.
+        Could I ask who called you guys to arrest me?"
+    - name: Police
+      Line: "It was an anonymous caller, I don\u2019t know but they said you had
+        a weapon and were doing illegal substances at the party."
+    - name: You
+      Line: Officer, I have not done anything like that. I am just grieving over
+        personal things in my life.
+    - name: Police
+      Line: Would you let me take you to the station for further investigation?
+    - name: you
+      Line: Alright...
+    - name: ...
+      Line: '*you get into the police car with both hands restrained*'
+    - name: ...
+      Line: '*after arriving at the station, you are questioned for crimes you know
+        nothing about*'
+    - name: ...
+      Line: '*The officers find nothing wrong with you, stating that you were likely
+        framed, and you are released within the hour*'
+    - name: ...
+      Line: '*you''re no criminal... just a citizen unable to grieve your wife and
+        kids*'
+    - name: ...
+      Line: '*now freed you go on with your life*'
+    - name: The Good Ending
+      Line: ' '
+    responses:
+    - responseText: (End)
+      nextNode:
+        dialogueLines: []
+        responses: []
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      ring: 0
+      karma: 0

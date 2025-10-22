@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
+  m_Name: Bad End
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
+  DiaNode:
+    dialogueLines:
+    - name: Afterwards
+      Line: '*You have the cake*'
+    - name: You
+      Line: "Well it\u2019s not quite my birthday yet but I guess this cake will
+        have to do."
+    - name: You
+      Line: Eating this cake makes me feel like my sorrows are finally going away.
+    - name: You
+      Line: Like I forgot my past and nothing is going to stop me.
+    - name: You
+      Line: Let me get the hell out of here.
+    - name: ...
+      Line: '*footsteps*'
+    - name: Police
+      Line: It's the police! Step out where we can see you!
+    - name: You
+      Line: Huh..? Why officer?
+    - name: Police
+      Line: Sir, do not make me repeat myself
+    - name: You
+      Line: Am I not complying with you?
+    - name: Police
+      Line: Sir, continue resisting and I will shoot you!
+    - name: Police
+      Line: Do you have any items on you?
+    - name: You
+      Line: I have this *you reach for your wallet in your pocket, but before you
+        get it, you black out*
+    - name: ...
+      Line: Next thing you know you've died.
+    - name: ...
+      Line: Unfortunately for you, this is how you went out this time.
+    - name: ...
+      Line: The cake was a lie
+    - name: ...
+      Line: your life was a lie
+    - name: ...
+      Line: in the end... nothing was true but your imagination
+    - name: ...
+      Line: but you decided to eat the cake anyway... and died anyway...
+    - name: ...
+      Line: again
+    - name: ...
+      Line: and again
+    - name: The Bad Ending
+      Line: ' '
+    responses:
+    - responseText: (End)
+      nextNode:
+        dialogueLines: []
+        responses: []
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      ring: 0
+      karma: 0
