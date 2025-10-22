@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
+  m_Name: Quiet Guy
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
+  DiaNode:
+    dialogueLines:
+    - name: Quiet Guy
+      Line: ...
+    - name: Quiet Guy
+      Line: What...
+    responses:
+    - responseText: Why is everyone treating me so strange today?
+      nextNode:
+        dialogueLines:
+        - name: Quiet Guy
+          Line: I don't know...
+        - name: You
+          Line: ...
+        - name: Quiet Guy
+          Line: ...
+        - name: You
+          Line: There was a party that we all attended and people told me I was drunk
+            and was partying like crazy. Do you happen to know if it's true?
+        - name: Quiet Guy
+          Line: "What makes you think I attended\u2026"
+        - name: Quiet Guy
+          Line: "Leave me alone man\u2026"
+        - name: You
+          Line: Well that was useful... I guess
+        responses:
+        - responseText: (End)
+          nextNode:
+            dialogueLines: []
+            responses: []
+          eatCake: 0
+          eatPill: 0
+          photo: 0
+          ring: 0
+          karma: 0
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      ring: 0
+      karma: 0
+    - responseText: How are you today?
+      nextNode:
+        dialogueLines:
+        - name: Quiet Guy
+          Line: "Fine\u2026"
+        - name: Quiet Guy
+          Line: "You\u2019re such a weirdo\u2026"
+        - name: You
+          Line: ...
+        - name: Quiet Guy
+          Line: ...
+        - name: You
+          Line: There was a party that we all attended and people told me I was drunk
+            and was partying like crazy. Do you happen to know if it's true?
+        - name: Quiet Guy
+          Line: "What makes you think I attended\u2026"
+        - name: Quiet Guy
+          Line: "Leave me alone man\u2026"
+        - name: You
+          Line: Well that was useful... I guess
+        responses:
+        - responseText: (End)
+          nextNode:
+            dialogueLines: []
+            responses: []
+          eatCake: 0
+          eatPill: 0
+          photo: 0
+          ring: 0
+          karma: 0
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      ring: 0
+      karma: 0
+    - responseText: ...
+      nextNode:
+        dialogueLines: []
+        responses: []
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      ring: 0
+      karma: 0

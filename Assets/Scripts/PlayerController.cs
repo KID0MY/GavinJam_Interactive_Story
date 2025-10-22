@@ -1,8 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public int karma = 0;
+    public List<Interactable> Endings;
+    public int itemsInteracted = 0;
+    public Transform endPos;
+    bool gameEnd;
+
     [Header("Character movement Values")]
     public float moveSpeed = 10f;
     public float gravity = -9.81f;
@@ -21,6 +29,9 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool inDialogue;
+
+    [HideInInspector]
+    public int trueActs = 0;
 
     // Components
     private CharacterController controller; 
@@ -55,6 +66,10 @@ public class PlayerController : MonoBehaviour
     {
         HandleGravityMovement();
         InteractionCheck();
+        if (itemsInteracted == 5 && !gameEnd)
+        {
+            endGame();
+        }
     }
     // Normal walking with gravity
     void HandleGravityMovement()
@@ -86,6 +101,21 @@ public class PlayerController : MonoBehaviour
         {
             currentInteractable.OnLoseFocus();
             currentInteractable = null;
+        }
+    }
+    void endGame()
+    {
+        if (karma < 0 && trueActs < 4)
+        {
+            Endings[2].OnInteract();
+        }
+        else if (karma >= 0 && trueActs < 4)
+        {
+            Endings[3].OnInteract();
+        }
+        else if (trueActs >= 4)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

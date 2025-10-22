@@ -10,18 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
-  m_Name: StartUp
+  m_Name: Guitar
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
   DiaNode:
     dialogueLines:
     - name: You
-      Line: Ugh, my head is killing me
+      Line: The item that shaped my childhood.
     - name: You
-      Line: W- Where am I? Why am I sleeping in an office?
-    - name: You
-      Line: What the hell is going on?
+      Line: Music has always been with me ever since I was a kid.
     responses:
-    - responseText: End
+    - responseText: (Take it)
+      nextNode:
+        dialogueLines: []
+        responses: []
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      karma: 0
+    - responseText: (Leave it)
       nextNode:
         dialogueLines: []
         responses: []

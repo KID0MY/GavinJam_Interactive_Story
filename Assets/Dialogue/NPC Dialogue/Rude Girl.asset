@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
+  m_Name: Rude Girl
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
+  DiaNode:
+    dialogueLines:
+    - name: You
+      Line: Hey, why does everyone look so similar?
+    - name: Rude Girl
+      Line: Um, first off, rude. Second off, no we don't? Everyone here looks very
+        different, and it's a good thing I don't look anything like you, cuz that
+        would be horrible.
+    responses:
+    - responseText: Why are you so rude?
+      nextNode:
+        dialogueLines:
+        - name: Rude Girl
+          Line: Because nobody here wants to be compared to some drunk, ugly, piece
+            of shit like you.
+        - name: Rude Girl
+          Line: Get your life together before you even speak to me. Leave.
+        responses:
+        - responseText: (End)
+          nextNode:
+            dialogueLines: []
+            responses: []
+          eatCake: 0
+          eatPill: 0
+          photo: 0
+          karma: 0
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      karma: 0
+    - responseText: I wasn't comparing myself to you
+      nextNode:
+        dialogueLines:
+        - name: Rude Girl
+          Line: Well, even when I'm speaking to you people are giving me these disgusted
+            looks.
+        - name: Rude Girl
+          Line: You are just that one creepy weird dude at work that we have to associate
+            ourselves with.
+        - name: Rude Girl
+          Line: Get your life together before you even speak to me. Leave.
+        responses:
+        - responseText: (End)
+          nextNode:
+            dialogueLines: []
+            responses: []
+          eatCake: 0
+          eatPill: 0
+          photo: 0
+          karma: 0
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      karma: 0
+    - responseText: ...
+      nextNode:
+        dialogueLines: []
+        responses: []
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      karma: 0

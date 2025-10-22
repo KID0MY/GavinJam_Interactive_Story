@@ -1,16 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueObject : Interactable
 {
     public string Name;
-    public bool fix;
     public bool startDialogue;
+    public bool Item;
     public DialogueScriptable diaScriptable;
+    public Dialogue dialogueBox;
+    public PlayerController player;
 
     private void Start()
     {
-        if (fix)
-            SpeakTo();
         if (startDialogue)
         {
             SpeakTo(); SpeakTo();
@@ -22,12 +23,18 @@ public class DialogueObject : Interactable
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        FindAnyObjectByType(typeof(DialogueObject)).GameObject().SetActive(true);
         Dialogue.Instance.StartDialogue(Name, diaScriptable.DiaNode);
     }
 
     public override void OnInteract()
     {
         SpeakTo();
+        Destroy(this);
+        if (Item)
+        {
+            player.itemsInteracted++;
+        }
         Debug.Log("cake");
     }
 

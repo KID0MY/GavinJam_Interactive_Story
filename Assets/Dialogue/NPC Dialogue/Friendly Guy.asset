@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
+  m_Name: Friendly Guy
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
+  DiaNode:
+    dialogueLines:
+    - name: Friendly Guy
+      Line: Hey dude, welcome back to work how ya feeling you passed out so quick
+    responses:
+    - responseText: I... did?
+      nextNode:
+        dialogueLines:
+        - name: Friendly Guy
+          Line: "Hell yeah dude, you don\u2019t remember yesterday's party?"
+        - name: Friendly Guy
+          Line: You were getting it on with all the ladies, looks like you had hell
+            of a time.
+        - name: Friendly Guy
+          Line: "I told you that it\u2019d get your mind off things."
+        responses:
+        - responseText: Yeah... I remember
+          nextNode:
+            dialogueLines:
+            - name: Friendly Guy
+              Line: Well dude, I hope you had fun.
+            - name: Friendly Guy
+              Line: "I\u2019m so glad I brought you. I\u2019m the best friend ever."
+            - name: Friendly Guy
+              Line: Just don't go too crazy again today, you must be hungover, take
+                it a bit easy and lay off the drugs.
+            responses:
+            - responseText: (End)
+              nextNode:
+                dialogueLines: []
+                responses: []
+              eatCake: 0
+              eatPill: 0
+              photo: 0
+              karma: 0
+          eatCake: 0
+          eatPill: 0
+          photo: 0
+          karma: 0
+        - responseText: And who are you again?
+          nextNode:
+            dialogueLines:
+            - name: Friendly Guy
+              Line: "Uh, I\u2019m your best friend? Did those women give you too
+                much to drink last night?"
+            - name: Friendly Guy
+              Line: But anyway, glad you woke up dude
+            - name: Friendly Guy
+              Line: Just don't go too crazy again today, you must be hungover, take
+                it a bit easy and lay off the drugs.
+            responses:
+            - responseText: (End)
+              nextNode:
+                dialogueLines: []
+                responses: []
+              eatCake: 0
+              eatPill: 0
+              photo: 0
+              karma: 0
+          eatCake: 0
+          eatPill: 0
+          photo: 0
+          karma: 0
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      karma: 0
+    - responseText: ...
+      nextNode:
+        dialogueLines: []
+        responses: []
+      eatCake: 0
+      eatPill: 0
+      photo: 0
+      karma: 0

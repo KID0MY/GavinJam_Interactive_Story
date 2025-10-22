@@ -5,8 +5,9 @@ using System.Collections.Generic;
 [System.Serializable]
 public class DialogueNode
 {
-    public string[] dialogueLines;
+    public DialogueName[] dialogueLines;
     public List<ResponseNode> responses;
+
 
     internal bool IsLastNode()
     {

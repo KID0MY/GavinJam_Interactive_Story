@@ -13,6 +13,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI DialogTitleText, DialogBodyText; 
     public GameObject responseButtonPrefab;
     public Transform responseButtonContainer;
+    public PlayerController player;
 
     public float TextSpeed;
 
@@ -33,8 +34,8 @@ public class Dialogue : MonoBehaviour
     {
         ShowDialogue();
 
-        DialogTitleText.text = title;
-        DialogBodyText.text = node.dialogueLines[index];
+        DialogTitleText.text = node.dialogueLines[index].name;
+        DialogBodyText.text = node.dialogueLines[index].Line;
         StartCoroutine(TypeLine(node));
 
         foreach (Transform child in responseButtonContainer)
@@ -79,9 +80,9 @@ public class Dialogue : MonoBehaviour
     // gets the dialogue branch from the chosen response and continues dialogue.
     public void SelectResponse(ResponseNode response, string title)
     {
+        index = 0;
         if (!response.nextNode.IsLastNode())
         {
-            index = 0;
             StartDialogue(title, response.nextNode);
         }
         else
@@ -90,6 +91,11 @@ public class Dialogue : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+        if (response.eatCake || response.eatPill || response.photo)
+        {
+            player.trueActs++;
+        }
+        player.karma += response.karma;
     }
 
     public void HideDialogue()
@@ -111,7 +117,7 @@ public class Dialogue : MonoBehaviour
     IEnumerator TypeLine(DialogueNode node)
     {
         DialogBodyText.maxVisibleCharacters = 0;
-        foreach (char c in node.dialogueLines[index].ToCharArray())
+        foreach (char c in node.dialogueLines[index].Line.ToCharArray())
         {
             DialogBodyText.maxVisibleCharacters++;
             yield return new WaitForSeconds(TextSpeed);

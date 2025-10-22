@@ -10,22 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea97b5a6e0d9af4090f5be336e13b0f, type: 3}
-  m_Name: StartUp
+  m_Name: Drugs
   m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
   DiaNode:
     dialogueLines:
     - name: You
-      Line: Ugh, my head is killing me
+      Line: "They\u2019re my prescription drugs\u2026"
     - name: You
-      Line: W- Where am I? Why am I sleeping in an office?
+      Line: What are they doing here?
     - name: You
-      Line: What the hell is going on?
+      Line: Should I eat them?
     responses:
-    - responseText: End
+    - responseText: (Leave it there)
       nextNode:
         dialogueLines: []
         responses: []
       eatCake: 0
       eatPill: 0
       photo: 0
-      karma: 0
+      ring: 0
+      karma: 1
+    - responseText: (Eat some)
+      nextNode:
+        dialogueLines: []
+        responses: []
+      eatCake: 0
+      eatPill: 1
+      photo: 0
+      ring: 0
+      karma: -1
