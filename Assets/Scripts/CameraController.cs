@@ -5,7 +5,6 @@ public class CameraController : MonoBehaviour
 {
     [Header("Camera Sensitivity")]
     [Range(0.0f, 30.0f)] public float lookSensitivity = 10.0f;
-    [Range(0.0f, 100.0f)] public float rollSensitivity = 60.0f;
     [Range(100.0f, 300.0f)] public float controllerSensitivity = 200.0f;
 
     [Header("References")]
@@ -15,11 +14,8 @@ public class CameraController : MonoBehaviour
     private Vector2 lookInput;
     private float rollInput;
     private float xRotation = 0f;
-
-    // Mode
-    public bool zeroG = false; // toggled by PlayerController when switching maps
-
-    private void OnEnable()
+    
+    private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -40,8 +36,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (Cursor.lockState == CursorLockMode.Locked)
-            HandleLookGravity();
+        HandleLookGravity();
     }
 
     void HandleLookGravity()

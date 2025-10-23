@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [Header("Character movement Values")]
     public float moveSpeed = 10f;
     public float gravity = -9.81f;
-    public float thrusterSpeed = 3f;
 
     [Header("References")]
     public CameraController cameraController;
