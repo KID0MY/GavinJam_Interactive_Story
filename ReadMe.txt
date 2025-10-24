@@ -9,5 +9,7 @@ This deliverable has implementation of each requirement used throughout the scen
 Deliverable 4:
 This deliverable includes 3 shader implementations in particular, a bump shader for walls and furnishing, a toon shader with rim light as it gives a very cell shaded and reflective look to the NPC visors, and a unlit shader with highlighted borders, which is currently not implemented as such, but will be a way to highlight interactable items. By utilizing these shaders we are able to highlight specific areas of the game and guide the player to the answer while not making it obvious. By using the shaders like the bump map shader we can analyse and check in the engine how the UVs of the objects are behaving when affected by light or other game objects.
 
+Game Build does not work, bug with shaders.
+
 
 https://drive.google.com/drive/folders/1nRVF1Umf9_qHK6j2TVNypx92MEfs9ZWr?usp=sharing
