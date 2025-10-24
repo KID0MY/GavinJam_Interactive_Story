@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public CameraController cameraController;
     public Transform cameraBody;
     public Camera playerCamera;
+    public Dialogue dialogueBox;
 
     [Header("Interaction values")]
     [SerializeField] private Vector3 interactionRayPoint = default;
@@ -63,13 +64,16 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        HandleGravityMovement();
-        InteractionCheck();
+        if (!dialogueBox.IsDialogueActive())
+        {
+            HandleGravityMovement();
+        }
         if (!inDialogue && !gameEnd && itemsInteracted >= 5)
         {
             gameEnd = true;
             endGame();
         }
+        InteractionCheck();
     }
     // Normal walking with gravity
     void HandleGravityMovement()

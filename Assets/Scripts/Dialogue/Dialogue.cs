@@ -14,7 +14,7 @@ public class Dialogue : MonoBehaviour
     public GameObject responseButtonPrefab;
     public Transform responseButtonContainer;
     public PlayerController player;
-    private AudioSource audio;
+    private AudioSource audioSource;
 
     public float TextSpeed;
 
@@ -23,7 +23,7 @@ public class Dialogue : MonoBehaviour
 
     private void Awake()
     {
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         if (Instance == null)
         {
             Instance = this;
@@ -37,7 +37,7 @@ public class Dialogue : MonoBehaviour
         player.inDialogue = true;
         ShowDialogue();
 
-        audio.Play();
+        audioSource.Play();
         DialogTitleText.text = node.dialogueLines[index].name;
         DialogBodyText.text = node.dialogueLines[index].Line;
         StartCoroutine(TypeLine(node));

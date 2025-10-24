@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [Header("References")]
     public Transform playerBody;   // for gravity mode (Y rotation)
     public Transform cameraBody;   // actual camera
+    public Dialogue dialogueBox;
 
     private Vector2 lookInput;
     private float rollInput;
@@ -36,7 +37,8 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        HandleLookGravity();
+        if (!dialogueBox.IsDialogueActive())
+            HandleLookGravity();
     }
 
     void HandleLookGravity()
