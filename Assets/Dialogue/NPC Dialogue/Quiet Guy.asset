@@ -76,7 +76,31 @@ MonoBehaviour:
         - responseText: (End)
           nextNode:
             dialogueLines: []
-            responses: []
+            responses:
+            - responseText: 
+              nextNode:
+                dialogueLines: []
+                responses:
+                - responseText: 
+                  nextNode:
+                    dialogueLines: []
+                    responses:
+                    - responseText: 
+                      eatCake: 0
+                      eatPill: 0
+                      photo: 0
+                      ring: 0
+                      karma: 0
+                  eatCake: 0
+                  eatPill: 0
+                  photo: 0
+                  ring: 0
+                  karma: 0
+              eatCake: 0
+              eatPill: 0
+              photo: 0
+              ring: 0
+              karma: 0
           eatCake: 0
           eatPill: 0
           photo: 0
