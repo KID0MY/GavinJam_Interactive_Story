@@ -21,6 +21,8 @@ public class Menu_Code : MonoBehaviour
     {
         paused = !paused;
         Time.timeScale = paused ? 0 : 1;
+        Cursor.lockState = paused? CursorLockMode.Confined : CursorLockMode.Locked;
+        Cursor.visible = paused;
         Menu.SetActive(paused);
     }
     
