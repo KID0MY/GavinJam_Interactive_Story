@@ -9,7 +9,7 @@ Shader "Custom/Tree"
 
     SubShader
     {
-        Tags { "RenderPipeline" = "UniversalRenderPipeline" "Queue" = "Transparent" "RenderType" = "Transparent" }
+        Tags { "RenderPipeline" = "UniversalPipeline" "Queue" = "Transparent" "RenderType" = "Transparent" }
         Blend SrcAlpha OneMinusSrcAlpha  // Ensure proper blending for transparency
 
         Pass
