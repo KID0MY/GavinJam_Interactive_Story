@@ -24,7 +24,7 @@ We implemented a complete texturing pass across all environment elements and pro
 
 ## Visual Effects
 
-write about it yippe
+we selected a variety of visual effects to bring out the game as we had envisioned, as well as taking feedback for our additions, such as the use of the highlight shader to improve the visibility of the goal items. some of the effects additions included are a wave shader in the sink so it doesn't feel empty, a transparent tree shader outside, with a glass shader to see it, a decal applied to the family photo, to make it feel just as important and unique to the story as the cake, as it was intended, then finally the skybox was changed so that it adds a bit more to the scene ambiance and environmental story.
 
 
 
