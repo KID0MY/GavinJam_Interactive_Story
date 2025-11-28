@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_WaterShader
-  m_Shader: {fileID: 4800000, guid: 5435f7dac0e5f054c81e267ee056ebf4, type: 3}
+  m_Name: Custom_Decal
+  m_Shader: {fileID: 4800000, guid: a78a5a6b035d7ca4b9415d9bb76b086f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,21 +23,17 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BaseMap:
+    - _DecalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f59a292bba262554e80154d5fb8a780e, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amp: 0.02
-    - _Freq: 1.19
-    - _Freq2: 1.52
-    - _Speed: 1.77
-    m_Colors:
-    - _BaseColor: {r: 0.23718406, g: 0.5232315, b: 0.7735849, a: 1}
+    - _ShowDecal: 0
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
