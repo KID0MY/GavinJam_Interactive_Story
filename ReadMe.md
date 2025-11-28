@@ -1,6 +1,8 @@
 # YOUTUBE PRESENTATION:
+https://www.youtube.com/watch?v=o7LpIH4CUAA
 
- 
+
+ # Old Deliverables
  Deliverable 2:
 For this deliverable each necessary item was applied to the many CRT screens in the scene, this implementation was done primarily because these are going to be a primary visual element frequented in the game and will be utilized for much of the games visual story telling in future implementation of the routes and endings. By having access to this pool of lighting models already attached to these objects, and preemptively allowing for their toggleability, we will be able to more efficiently use color as our primary visual medium for invoking emotion in the narrative. Each shader is used to showcase and analyse what will be the best approach to shading the objects on the final products and if using special effects (ex. Rim lighting or gradients) might be an interesting approach to them.
 
