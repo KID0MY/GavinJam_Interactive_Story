@@ -975,7 +975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unsual Office Day
+  m_text: Unusual Office Day
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1840,6 +1840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcbb84d39c0a7e4dac266af602804f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Menu_Code
+  Menu: {fileID: 0}
 --- !u!4 &780054999
 Transform:
   m_ObjectHideFlags: 0
