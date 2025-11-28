@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_borderShadeer
-  m_Shader: {fileID: 4800000, guid: 836e40cdc32b4583bcd762fa5190831f, type: 3}
+  m_Name: Custom_Holo
+  m_Shader: {fileID: 4800000, guid: 5722b5a2e2f897747bfb2c957c7e70be, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,13 +22,20 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineWidth: 0.05
-    - _enable: 0
+    - _FresnelPower: 5
+    - _LineFrequency: 360
+    - _LineSpeed: 5
+    - _RimIntensity: 1.15
+    - _Transparency: 0.024
     m_Colors:
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 0, g: 1, b: 0.0381248, a: 1}
+    - _LineColor: {r: 0.39711642, g: 0.8679245, b: 0.42921695, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

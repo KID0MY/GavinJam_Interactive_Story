@@ -5,6 +5,7 @@ Shader "Custom Shaders/MultiPassOutline"
         _MainColor ("Main Color", Color) = (1,1,1,1)
         _OutlineColor ("Outline Color", Color) = (0,0,0,1)
         _OutlineWidth ("Outline Width", Range(0.0, 0.1)) = 0.05
+        [Toggle] _enable("Outline enable", Float) = 1
     }
     SubShader
     {
@@ -61,6 +62,7 @@ Shader "Custom Shaders/MultiPassOutline"
 
             float4 _OutlineColor;
             float _OutlineWidth;
+            float _enable;
 
             struct Attributes
             {
@@ -86,7 +88,13 @@ Shader "Custom Shaders/MultiPassOutline"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                return _OutlineColor;
+                if (_enable==1)
+                    return _OutlineColor;
+                else
+                {
+                    discard;
+                    return 0;
+                }
             }
             ENDHLSL
         }
