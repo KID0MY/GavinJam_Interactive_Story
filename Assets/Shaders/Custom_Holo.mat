@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_Scroll
-  m_Shader: {fileID: 4800000, guid: f86d53fe9602d7b4ea380eaecb5d1a2d, type: 3}
+  m_Name: Custom_Holo
+  m_Shader: {fileID: 4800000, guid: 5722b5a2e2f897747bfb2c957c7e70be, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,27 +23,19 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: e0a11d0b35a63e34286d18a24220b955, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e0a11d0b35a63e34286d18a24220b955, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 1.59
-    - _LineFrequency: 10
-    - _LineSpeed: 1
-    - _RimIntensity: -0.02
-    - _ScrollX: 1
-    - _ScrollY: 0
-    - _Speed: 0.3
-    - _Transparency: 0.079
-    - speed: 0.251
+    - _FresnelPower: 5
+    - _LineFrequency: 360
+    - _LineSpeed: 5
+    - _RimIntensity: 1.15
+    - _Transparency: 0.024
     m_Colors:
-    - _FresnelColor: {r: 0, g: 0.8, b: 1, a: 1}
-    - _LineColor: {r: 0.18626153, g: 0.254717, b: 0.16700785, a: 1}
+    - _FresnelColor: {r: 0, g: 1, b: 0.0381248, a: 1}
+    - _LineColor: {r: 0.39711642, g: 0.8679245, b: 0.42921695, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

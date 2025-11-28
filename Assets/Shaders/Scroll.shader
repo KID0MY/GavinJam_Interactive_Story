@@ -6,6 +6,7 @@ Shader "Custom/Scroll"
         _FoamTex ("Foam", 2D) = "white" {}
         _ScrollX ("Scroll X", Range(-5,5)) = 1
         _ScrollY ("Scroll Y", Range(-5,5)) = 1
+        _Speed ("Speed", Range(-1,1)) = 1
     }
 
     SubShader
@@ -41,6 +42,7 @@ Shader "Custom/Scroll"
 
             float _ScrollX;
             float _ScrollY;
+            float _Speed;
 
             // Vertex Shader
             Varyings vert(Attributes IN)
@@ -57,17 +59,17 @@ Shader "Custom/Scroll"
             half4 frag(Varyings IN) : SV_Target
             {
                 // Scroll UVs over time
-                float2 scrolledUV = IN.uv + float2(_ScrollX, _ScrollY) * _Time.y;
+                float2 scrolledUV = IN.uv + float2(_ScrollX, _ScrollY) * (_Time.y * _Speed);
 
                 // Scroll UVs for foam texture at a different rate
-                float2 scrolledFoamUV = IN.uv + float2(_ScrollX, _ScrollY) * (_Time.y * 0.5);
+                float2 scrolledFoamUV = IN.uv + float2(_ScrollX, _ScrollY) * (_Time.y * (_Speed * 0.5));
 
                 // Sample both textures using the scrolled UV coordinates
                 half4 water = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, scrolledUV);
                 half4 foam = SAMPLE_TEXTURE2D(_FoamTex, sampler_FoamTex, scrolledFoamUV);
 
                 // Blend both textures
-                half4 finalColor = (water + foam) * 0.5;
+                half4 finalColor = (water);
                 
                 return finalColor;
             }

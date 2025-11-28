@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
     // Components
     private CharacterController controller; 
     private PlayerInput playerInput;
+    private Volume globalVolume;
 
     // Movement
     private Vector2 moveInput;
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        globalVolume = GameObject.Find("Global Volume").GetComponent<Volume>();
     }
     
     // Input System callback
@@ -54,10 +58,13 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
             if (currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
             {
                 currentInteractable.OnInteract();
             }
+        }
     }
     void Update()
     {
@@ -71,6 +78,7 @@ public class PlayerController : MonoBehaviour
             endGame();
         }
         InteractionCheck();
+        LookupChange();
     }
     // Normal walking with gravity
     void HandleGravityMovement()
@@ -84,6 +92,12 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+
+    void LookupChange()
+    {
+        globalVolume.GetComponent<ColorLookup>().contribution.Equals(0.5f + karma);
+    }
+
     private void InteractionCheck()
     {
         if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
