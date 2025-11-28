@@ -54,13 +54,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
             if (currentInteractable != null && Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
             {
                 currentInteractable.OnInteract();
             }
-        }
     }
     void Update()
     {
@@ -89,7 +86,7 @@ public class PlayerController : MonoBehaviour
     }
     private void InteractionCheck()
     {
-        if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
+        if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance, interactionLayer))
         {
             if (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID())
             {
