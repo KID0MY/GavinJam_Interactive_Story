@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour
             endGame();
         }
         InteractionCheck();
-        LookupChange();
     }
     // Normal walking with gravity
     void HandleGravityMovement()
@@ -91,11 +90,6 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-    }
-
-    void LookupChange()
-    {
-        globalVolume.GetComponent<ColorLookup>().contribution.Equals(0.5f + karma);
     }
 
     private void InteractionCheck()
