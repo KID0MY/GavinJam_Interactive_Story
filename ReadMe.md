@@ -9,7 +9,18 @@ This deliverable has implementation of each requirement used throughout the scen
 Deliverable 4:
 This deliverable includes 3 shader implementations in particular, a bump shader for walls and furnishing, a toon shader with rim light as it gives a very cell shaded and reflective look to the NPC visors, and a unlit shader with highlighted borders, which is currently not implemented as such, but will be a way to highlight interactable items. By utilizing these shaders we are able to highlight specific areas of the game and guide the player to the answer while not making it obvious. By using the shaders like the bump map shader we can analyse and check in the engine how the UVs of the objects are behaving when affected by light or other game objects.
 
-Game Build does not work, bug with shaders.
+# == UPDATE ==
+
+## Improvements:
+Throughout this second half of the project, we made several improvements to our project based on the feedback from the presentation. We completed an overall update to the environment to create a clearer and more cohesive layout, fixed several shader issues that were causing visual inconsistencies, and solved the bug that prevented players from interacting with objects by fixing our collider setup. We also optimized multiple assets by reducing unnecessary mesh complexity to improve performance. In addition, we implemented both a title screen and a pause screen to enhance usability.
+
+## Texturing
+We implemented a complete texturing pass across all environment elements and props to ensure the scene uses textures meaningfully and cohesively. Every asset in the game was properly UV-mapped, and we created our textures using Blender and Substance Painter, allowing us to achieve clean, high-resolution maps tailored to the visual style of the project. We also incorporated normal mapping, tinting, scrolling effects, and additional shader-based enhancements to add depth and motion to key surfaces. To meet the requirement for runtime control, we implemented a texture toggle that allows the player to switch all textures on or off during gameplay, rather than through the Unity Editor. 
+
+## Visual Effects
+
+write about it yippe
+
 
 
 https://drive.google.com/drive/folders/1nRVF1Umf9_qHK6j2TVNypx92MEfs9ZWr?usp=sharing
